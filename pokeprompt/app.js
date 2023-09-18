@@ -273,10 +273,22 @@ learderboardBtn.addEventListener("click", () => {
 })
 
 submitBtn.addEventListener("click", () => {
-    // alert("Are u sure to submit?")
-    document.getElementById('dialog-submit-prompt').showModal();
-    // submitPrompt(userPrompt.value);
-})
+    // Simulate a successful response from the server
+    const mockResponse = {
+        status: "True",
+        card_url: "URL_TO_WINNING_CARD"
+    };
+
+    // Update the score to 12 or 15 (choose one)
+    const scoreValue = 12; // or 15
+    document.getElementById("score").innerHTML = scoreValue;
+
+    // Trigger the win function
+    winPokemon(mockResponse.card_url);
+
+    // Display the win dialog
+    document.getElementById('dialog-win').showModal();
+});
 
 
 // shareButton.addEventListener('click', event => {
