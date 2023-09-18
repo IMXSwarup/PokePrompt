@@ -84,7 +84,7 @@ function submitPrompt(prompt = "hi") {
     // Update the leaderboard (change the score to the desired value)
     fetchUserScoreByUserID(userID, function (currentScore) {
         if (currentScore === null) {
-            currentScore = 0;
+            currentScore = 10;
         }
 
         // Simulate an increase in score and update the leaderboard
