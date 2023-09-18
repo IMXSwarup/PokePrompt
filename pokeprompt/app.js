@@ -162,25 +162,6 @@ function submitPrompt(prompt = "hi") {
 
     if (level == 1) {
         xhr.send(JSON.stringify(data1));
-        winPokemon(response.card_url);
-        level += 1;
-        levelpp();
-        if (xhr.status === 200) {
-            var apiResponse = JSON.parse(xhr.responseText);
-            var user = apiResponse.res.find(function(item) {
-                return item.userID === userID;
-            });
-
-            if (user) {
-                callback(user.score);
-            } else {
-                callback(null); // User not found
-            }
-        } else {
-            console.error("Request failed with status:", xhr.status);
-            callback(null); // Request failed
-        }
-        xhr.send();
 
     } else if (level == 2) {
         xhr.send(JSON.stringify(data2));
