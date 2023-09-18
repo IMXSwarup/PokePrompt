@@ -272,35 +272,11 @@ learderboardBtn.addEventListener("click", () => {
 
 })
 
-// Replace your existing submitBtn event listener with this code
 submitBtn.addEventListener("click", () => {
-    // Simulate winning by setting the response and updating the score
-    const winResponse = "Congratulations! You've won the game!";
-    gptOutput.value = ""; // Clear previous responses
-    typeWriter(winResponse);
-
-    // Update the score to a predefined value (e.g., 15)
-    const newScore = 15;
-    score.innerHTML = newScore;
-
-    // Update the leaderboard (you may need to adjust this logic based on your API)
-    updateLeaderboard(newScore);
-
-    // Show the win dialog
-    winPokemon("URL_TO_WINNING_POKEMON_IMAGE");
-
-    // Increase the level (assuming you want to move to the next level)
-    level += 1;
-    levelpp();
-
-    // Fetch the next system prompt (if needed)
-    if (level != 4) {
-        fetchSystemPrompt(`https://pokeprompt.bitgdsc.repl.co/default/lv_${level}`);
-    } else {
-        // Alert or show a dialog indicating that all levels are completed
-    }
-});
-
+    // alert("Are u sure to submit?")
+    document.getElementById('dialog-submit-prompt').showModal();
+    // submitPrompt(userPrompt.value);
+})
 
 
 // shareButton.addEventListener('click', event => {
