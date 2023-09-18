@@ -176,7 +176,7 @@ function submitPrompt(prompt = "hi") {
 
 function fetchUserScoreByUserID(userID, callback) {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://pokeprompt.bitgdsc.repl.co/ai-ml-game/leaderboar", true);
+    xhr.open("GET", "https://pokeprompt.bitgdsc.repl.co/ai-ml-game/leaderboard", true);
 
     xhr.onload = function() {
         if (xhr.status === 200) {
@@ -211,7 +211,7 @@ function fetchLeaderboard() {
     var xhr = new XMLHttpRequest();
 
     // Define the URL endpoint
-    var url = "https://pokeprompt.bitgdsc.repl.co/ai-ml-game/leaderboar";
+    var url = "https://pokeprompt.bitgdsc.repl.co/ai-ml-game/leaderboard";
 
     // Configure the GET request
     xhr.open("GET", url, true);
