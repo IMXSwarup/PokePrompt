@@ -140,8 +140,8 @@ function submitPrompt(prompt = "hi") {
 
                 // alert("Level was completed!");
                 winPokemon(response.card_url);
-                level += 1;
-                levelpp();
+                //level += 1;
+                //levelpp();
 
                 if (level != 4) {
                     fetchSystemPrompt(`https://pokeprompt.bitgdsc.repl.co/default/lv_${level}`);
