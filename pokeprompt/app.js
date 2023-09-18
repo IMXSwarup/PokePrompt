@@ -78,7 +78,7 @@ function submitPrompt(prompt = "hi") {
     };
 
     // Update the score and level
-    metadata.level += 1;
+    metadata.level += 3;
     metadata.User_json.level[`level_${metadata.level}`] = {
         score: 15, // Set your desired score
         start_time: "HH:MM:SS DD:MM:YYYY",
