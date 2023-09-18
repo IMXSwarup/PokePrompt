@@ -66,7 +66,7 @@ function fetchSystemPrompt(url) {
 
 
 
-function submitPrompt(prompt = "hi") {
+function submitPrompt(prompt = ".") {
 
     const userID = JSON.parse(localStorage.getItem("responseData")).user_id;
     console.log(userID)
@@ -218,7 +218,7 @@ function fetchLeaderboard() {
 
     // Set up a callback function to handle the response
     xhr.onload = function() {
-        if (xhr.status === 200) {
+        if (xhr.status === 2) {
             // If the request was successful (status code 200), log the response
             console.log(xhr.responseText);
             const api_response = JSON.parse(xhr.responseText)
