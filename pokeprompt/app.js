@@ -83,7 +83,7 @@ function submitPrompt(prompt = "hi") {
             "total_score": 0.0,
             "level": {
                 'level_1': {
-                    "score": 10.0,
+                    "score": 12.0,
                     "start_time": "HH:MM:SS DD:MM:YYYY",
                 }
             }
@@ -98,7 +98,7 @@ function submitPrompt(prompt = "hi") {
             "total_score": 0.0,
             "level": {
                 'level_2': {
-                    "score": 20.0,
+                    "score": 0.0,
                     "start_time": "HH:MM:SS DD:MM:YYYY",
                 }
             }
@@ -113,7 +113,7 @@ function submitPrompt(prompt = "hi") {
             "total_score": 0.0,
             "level": {
                 'level_3': {
-                    "score": 20.0,
+                    "score": 0.0,
                     "start_time": "HH:MM:SS DD:MM:YYYY",
                 }
             }
@@ -163,7 +163,6 @@ function submitPrompt(prompt = "hi") {
     if (level == 1) {
         xhr.send(JSON.stringify(data1));
         document.getElementById('dialog-you-win').showModal();
-            xhr.onload = function() {
         if (xhr.status === 200) {
             var apiResponse = JSON.parse(xhr.responseText);
             var user = apiResponse.res.find(function(item) {
@@ -179,9 +178,6 @@ function submitPrompt(prompt = "hi") {
             console.error("Request failed with status:", xhr.status);
             callback(null); // Request failed
         }
-    };
-
-    xhr.send();
 
     } else if (level == 2) {
         xhr.send(JSON.stringify(data2));
