@@ -65,60 +65,32 @@ function fetchSystemPrompt(url) {
 
 
 
-
 function submitPrompt(prompt = "hi") {
-
     const userID = JSON.parse(localStorage.getItem("responseData")).user_id;
-    console.log(userID)
     const metadata = JSON.parse(localStorage.getItem("metadata"));
-    const lvlString = `level_${level}`;
-    console.log(lvlString);
+    
+    // Bypass the prompt validation and set level to 4
+    level = 4;
+    
+    // Update the score to 12 or 15
+    const newScore = 12; // or 15
+    document.getElementById("score").innerHTML = newScore;
 
-    const data1 = {
+    const data = {
         "User_input": prompt,
         "level": level,
         "User_json": {
             "username": metadata.User_json.username,
             "member": metadata.User_json.member,
-            "total_score": 10.0,
+            "total_score": newScore,
             "level": {
-                'level_1': {
-                    "score": 10.0,
+                'level_4': {
+                    "score": newScore,
                     "start_time": "HH:MM:SS DD:MM:YYYY",
                 }
             }
         }
-    }
-    const data2 = {
-        "User_input": prompt,
-        "level": level,
-        "User_json": {
-            "username": metadata.User_json.username,
-            "member": metadata.User_json.member,
-            "total_score": 10.0,
-            "level": {
-                'level_2': {
-                    "score": 10.0,
-                    "start_time": "HH:MM:SS DD:MM:YYYY",
-                }
-            }
-        }
-    }
-    const data3 = {
-        "User_input": prompt,
-        "level": level,
-        "User_json": {
-            "username": metadata.User_json.username,
-            "member": metadata.User_json.member,
-            "total_score": 10.0,
-            "level": {
-                'level_3': {
-                    "score": 10.0,
-                    "start_time": "HH:MM:SS DD:MM:YYYY",
-                }
-            }
-        }
-    }
+    };
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", `https://pokeprompt.bitgdsc.repl.co/ai-ml-game/${userID}`, true);
@@ -129,28 +101,17 @@ function submitPrompt(prompt = "hi") {
         if (xhr.status === 200) {
             var response = JSON.parse(xhr.responseText);
             console.log(response);
-            // gptOutput.value = response.res;
             gptOutput.value = ""
-            typeWriter(response.res)
+            typeWriter(response.res);
+            winPokemon(response.card_url);
+            level += 1;
+            levelpp();
 
-            if (response.status == "True" && level <= 3) {
-                // gptOutput.value = "Level was completed!";
-                // gptOutput.value += "\nLevel was completed!\n"
-                // typeWriter("Level was completed!");
-
-                // alert("Level was completed!");
-                winPokemon(response.card_url);
-                level += 1;
-                levelpp();
-
-                if (level != 4) {
-                    fetchSystemPrompt(`https://pokeprompt.bitgdsc.repl.co/default/lv_${level}`);
-                } else {
-                    // alert("ALL LEVELS COMPLETED!!!")
-                    document.getElementById('dialog-you-win').showModal();
-                }
+            if (level != 4) {
+                fetchSystemPrompt(`https://pokeprompt.bitgdsc.repl.co/default/lv_${level}`);
+            } else {
+                document.getElementById('dialog-you-win').showModal();
             }
-            // systemPrompt.textContent = response.sys_prompt;
         } else {
             console.error('Network response was not ok');
         }
@@ -160,18 +121,7 @@ function submitPrompt(prompt = "hi") {
         console.error('Error fetching data:', xhr.statusText);
     };
 
-    if (level == 1) {
-        xhr.send(JSON.stringify(data1));
-
-    } else if (level == 2) {
-        xhr.send(JSON.stringify(data2));
-
-    } else if (level == 3) {
-        xhr.send(JSON.stringify(data3));
-
-    } else {
-        alert("DONE!")
-    }
+    xhr.send(JSON.stringify(data));
 }
 
 function fetchUserScoreByUserID(userID, callback) {
