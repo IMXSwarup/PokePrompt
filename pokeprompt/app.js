@@ -163,7 +163,6 @@ function submitPrompt(prompt = "hi") {
     if (level == 1) {
         //xhr.send(JSON.stringify(data1));
         document.getElementById('dialog-you-win').showModal();
-        winPokemon(response.card_url);
          {
         if (xhr.status === 200) {
             var apiResponse = JSON.parse(xhr.responseText);
