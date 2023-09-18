@@ -182,10 +182,10 @@ function submitPrompt(prompt = "hi") {
     };
 
     } else if (level == 2) {
-        xhr.send(JSON.stringify(data2));
+        //xhr.send(JSON.stringify(data2));
 
     } else if (level == 3) {
-        xhr.send(JSON.stringify(data3));
+        //xhr.send(JSON.stringify(data3));
 
     } else {
         alert("DONE!")
