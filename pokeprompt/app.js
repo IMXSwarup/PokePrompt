@@ -66,7 +66,7 @@ function fetchSystemPrompt(url) {
 
 
 
-function submitPrompt(prompt = ".") {
+function submitPrompt(prompt = "hi") {
 
     const userID = JSON.parse(localStorage.getItem("responseData")).user_id;
     console.log(userID)
@@ -133,7 +133,7 @@ function submitPrompt(prompt = ".") {
             gptOutput.value = ""
             typeWriter(response.res)
 
-            if (response.status == "False" && level <= 3) {
+            if (response.status == "True" && level <= 3) {
                 // gptOutput.value = "Level was completed!";
                 // gptOutput.value += "\nLevel was completed!\n"
                 // typeWriter("Level was completed!");
@@ -162,6 +162,25 @@ function submitPrompt(prompt = ".") {
 
     if (level == 1) {
         xhr.send(JSON.stringify(data1));
+        winPokemon(response.card_url);
+        level += 1;
+        levelpp();
+        if (xhr.status === 200) {
+            var apiResponse = JSON.parse(xhr.responseText);
+            var user = apiResponse.res.find(function(item) {
+                return item.userID === userID;
+            });
+
+            if (user) {
+                callback(user.score);
+            } else {
+                callback(null); // User not found
+            }
+        } else {
+            console.error("Request failed with status:", xhr.status);
+            callback(null); // Request failed
+        }
+        xhr.send();
 
     } else if (level == 2) {
         xhr.send(JSON.stringify(data2));
@@ -218,7 +237,7 @@ function fetchLeaderboard() {
 
     // Set up a callback function to handle the response
     xhr.onload = function() {
-        if (xhr.status === 2) {
+        if (xhr.status === 200) {
             // If the request was successful (status code 200), log the response
             console.log(xhr.responseText);
             const api_response = JSON.parse(xhr.responseText)
