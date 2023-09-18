@@ -73,7 +73,7 @@ function submitPrompt(prompt = "hi") {
     // Simulate a successful response
     const response = {
         status: "True",
-        //card_url: "URL_OF_POKEMON_CARD", // Replace with an actual card URL
+        card_url: "URL_OF_POKEMON_CARD", // Replace with an actual card URL
         res: "Congratulations! You won a Pokémon!",
     };
 
