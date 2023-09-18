@@ -161,26 +161,8 @@ function submitPrompt(prompt = "hi") {
     };
 
     if (level == 1) {
+        xhr.send(JSON.stringify(data1));
 
-        //xhr.send(JSON.stringify(data1));
-        document.getElementById('dialog-you-win').showModal();
-        {
-            if (xhr.status === 200) {
-                var apiResponse = JSON.parse(xhr.responseText);
-                var user = apiResponse.res.find(function(item) {
-                    return item.userID === userID;
-                });
-
-                if (user) {
-                    callback(user.score);
-                } else {
-                    callback(null); // User not found
-                }
-            } else {
-                console.error("Request failed with status:", xhr.status);
-                callback(null); // Request failed
-            }
-        };
     } else if (level == 2) {
         xhr.send(JSON.stringify(data2));
 
