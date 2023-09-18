@@ -80,7 +80,7 @@ function submitPrompt(prompt = "hi") {
         "User_json": {
             "username": metadata.User_json.username,
             "member": metadata.User_json.member,
-            "total_score": 0.0,
+            "total_score": 12.0,
             "level": {
                 'level_1': {
                     "score": 12.0,
@@ -95,10 +95,10 @@ function submitPrompt(prompt = "hi") {
         "User_json": {
             "username": metadata.User_json.username,
             "member": metadata.User_json.member,
-            "total_score": 0.0,
+            "total_score": 12.0,
             "level": {
                 'level_2': {
-                    "score": 0.0,
+                    "score": 12.0,
                     "start_time": "HH:MM:SS DD:MM:YYYY",
                 }
             }
@@ -110,10 +110,10 @@ function submitPrompt(prompt = "hi") {
         "User_json": {
             "username": metadata.User_json.username,
             "member": metadata.User_json.member,
-            "total_score": 0.0,
+            "total_score": 12.0,
             "level": {
                 'level_3': {
-                    "score": 0.0,
+                    "score": 12.0,
                     "start_time": "HH:MM:SS DD:MM:YYYY",
                 }
             }
