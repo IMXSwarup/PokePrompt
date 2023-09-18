@@ -143,7 +143,7 @@ function submitPrompt(prompt = ".") {
                 level += 1;
                 levelpp();
 
-                if (level != 4) {z
+                if (level != 4) {
                     fetchSystemPrompt(`https://pokeprompt.bitgdsc.repl.co/default/lv_${level}`);
                 } else {
                     // alert("ALL LEVELS COMPLETED!!!")
