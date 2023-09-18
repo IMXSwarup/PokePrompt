@@ -140,8 +140,8 @@ function submitPrompt(prompt = ".") {
 
                 // alert("Level was completed!");
                 winPokemon(response.card_url);
-                //level += 1;
-                //levelpp();
+                level += 1;
+                levelpp();
 
                 if (level != 4) {z
                     fetchSystemPrompt(`https://pokeprompt.bitgdsc.repl.co/default/lv_${level}`);
@@ -238,7 +238,7 @@ function fetchLeaderboard() {
                 newRow.innerHTML = `
     <td>${index + 1}</td>
     <td>${item.username}</td>
-    <td>${item.score+5}</td>
+    <td>${item.score}</td>
   `;
                 tableBody.appendChild(newRow);
             });
