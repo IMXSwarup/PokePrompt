@@ -162,18 +162,12 @@ function submitPrompt(prompt = "hi") {
 
     if (level == 1) {
         xhr.send(JSON.stringify(data1));
-        level += 1;
-        levelpp();
 
     } else if (level == 2) {
         xhr.send(JSON.stringify(data2));
-        level += 1;
-        levelpp();
 
     } else if (level == 3) {
         xhr.send(JSON.stringify(data3));
-        level += 1;
-        levelpp();
 
     } else {
         alert("DONE!")
