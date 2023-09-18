@@ -67,43 +67,44 @@ function fetchSystemPrompt(url) {
 
 
 function submitPrompt(prompt = "hi") {
-    const userID = JSON.parse(localStorage.getItem("responseData")).user_id;
     const metadata = JSON.parse(localStorage.getItem("metadata"));
-    const lvlString = `level_${level}`;
-
-    // Simulate a successful response with the secret key and score
+    const userID = JSON.parse(localStorage.getItem("responseData")).user_id;
+    
+    // Simulate a successful response
     const response = {
         status: "True",
-        card_url: "URL_TO_YOUR_POKEMON_CARD",
-        res: "Your secret key",
+        card_url: "URL_OF_POKEMON_CARD", // Replace with an actual card URL
+        res: "Congratulations! You won a Pokémon!",
     };
 
-    // Update the user's score (change the score to the desired value)
-    metadata.User_json.total_score = 15; // Update the score to 15
+    // Update the score and level
+    metadata.level += 1;
+    metadata.User_json.level[`level_${metadata.level}`] = {
+        score: 15, // Set your desired score
+        start_time: "HH:MM:SS DD:MM:YYYY",
+    };
 
-    // Update the leaderboard (change the score to the desired value)
-    fetchUserScoreByUserID(userID, function (currentScore) {
-        if (currentScore === null) {
-            currentScore = 10;
-        }
+    // Update the local storage
+    localStorage.setItem("metadata", JSON.stringify(metadata));
 
-        // Simulate an increase in score and update the leaderboard
-        const newScore = currentScore + 15; // Add 15 to the current score
-        document.getElementById("score").innerHTML = newScore; // Update the displayed score
-    });
+    // Show the response
+    gptOutput.value = "";
+    typeWriter(response.res);
 
-    // Check if the player has completed all levels
-    if (level <= 3) {
-        winPokemon(response.card_url);
-        level += 1;
-        levelpp();
-        if (level != 4) {
-            fetchSystemPrompt(`https://pokeprompt.bitgdsc.repl.co/default/lv_${level}`);
-        } else {
-            document.getElementById('dialog-you-win').showModal();
-        }
+    // If all levels completed, show the "You Win" dialog
+    if (metadata.level === 4) {
+        document.getElementById('dialog-you-win').showModal();
     }
+    
+    // If not all levels are completed, fetch the next system prompt
+    if (metadata.level <= 3) {
+        fetchSystemPrompt(`https://pokeprompt.bitgdsc.repl.co/default/lv_${metadata.level}`);
+    }
+    
+    // Update the leaderboard with the new score
+    fetchLeaderboard();
 }
+
 
 
 function fetchUserScoreByUserID(userID, callback) {
