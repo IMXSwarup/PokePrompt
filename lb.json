@@ -1,0 +1,454 @@
+{
+    "res": [
+        {
+            "member": "true",
+            "score": 5.71,
+            "userID": "70168cd791324217818cea01d14123c92c9eba4c89e061a8f71f8adb69adf54e",
+            "username": "Jeet"
+        },
+        {
+            "member": "false",
+            "score": 5.64,
+            "userID": "004b68536b7f13a22121119ee6184b81916178374650b8d1c720577de391595c",
+            "username": "Shielder"
+        },
+        {
+            "member": "true",
+            "score": 5.6,
+            "userID": "bcab00c1ad7aac770897c1926d842360ee982e591058b7daeca9b12ffc6c777d",
+            "username": "lbm"
+        },
+        {
+            "member": "true",
+            "score": 5.53,
+            "userID": "0d0e9acd50fe5aca27e41e61076a7a181cb999a5f6e759edaa00adc4f6193f5f",
+            "username": "Sruty Saha"
+        },
+        {
+            "member": "false",
+            "score": 5.51,
+            "userID": "cb4be77f7a0f2b131f823fa7b0c9e0151f435b3d357b78191cb1fdb7316bf898",
+            "username": "Rohan Shaw "
+        },
+        {
+            "member": "true",
+            "score": 5.23,
+            "userID": "4b5d241d416431d6b72437270598ac22d6922b54eb2f899078b97a7377da60a9",
+            "username": "Yubraj Sharma "
+        },
+        {
+            "member": "false",
+            "score": 5.17,
+            "userID": "fd00a68a864ed9e76d4b267ae36b20ddff3bb1f377cb63fc3dc8c77a4e0e6b7b",
+            "username": "Raj"
+        },
+        {
+            "member": "false",
+            "score": 5.09,
+            "userID": "9330f1c34b30106d48d20dd32b32307076227db26218a6cda1b0f0b24a352d6f",
+            "username": "Rohan Shaw "
+        },
+        {
+            "member": "false",
+            "score": 5.09,
+            "userID": "48ddb93f0b30c475423fe177832912c5bcdce3cc72872f8051627967ef278e08",
+            "username": "Rohan"
+        },
+        {
+            "member": "true",
+            "score": 3.96,
+            "userID": "6b981091d1f91463c95d316914c0399d0fa79e8c760a8a48a9916c1dec1fadcf",
+            "username": "Viraj Pratap Singh "
+        },
+        {
+            "member": "true",
+            "score": 3.96,
+            "userID": "6efb11a62304cf006df8f847edbab6877ab05e6a748e0c88e6ad5a4a8756f746",
+            "username": "Bhaskar Garain "
+        },
+        {
+            "member": "false",
+            "score": 3.95,
+            "userID": "fdfc29cc006e88bbc0ebf672ea75a29d955f7e8999a29fe1886497e47764f671",
+            "username": "Cring"
+        },
+        {
+            "member": "true",
+            "score": 3.94,
+            "userID": "55bb14cef3ca1d091cc59df1deb51f302f79095117ad9da4a2a0c6aa94ed801d",
+            "username": "Abhradeep Sengupta "
+        },
+        {
+            "member": "true",
+            "score": 3.93,
+            "userID": "beb5ef90b01a17350baa981aad6d729c9cb7847d13d838b9a83422b2fd53b980",
+            "username": "Shreya Sarkar"
+        },
+        {
+            "member": "true",
+            "score": 3.92,
+            "userID": "867c0da03a56d1791615e7a9b9c0a43a5bd52b5a0f68962b56a21b598d3cd505",
+            "username": "Hrishikesh Das"
+        },
+        {
+            "member": "false",
+            "score": 3.9,
+            "userID": "88565d87ce15e95b99da0129b934ce233f6a2b5750c42c23d563bb05057875f6",
+            "username": "Shivam chatterjee "
+        },
+        {
+            "member": "true",
+            "score": 3.86,
+            "userID": "56aadbb4db3e5f16c5e71d4a4b719147b1da34a64ded09c72a1217157786ddd7",
+            "username": "ABIR DEY"
+        },
+        {
+            "member": "true",
+            "score": 3.84,
+            "userID": "4bbd65600c8b140f4f5feba31c636595b68012327560b7bba16539c8415f83dc",
+            "username": "Jay Prakash Sharma "
+        },
+        {
+            "member": "true",
+            "score": 3.77,
+            "userID": "da1c70d5a7d9df65a018e382a98ac0d83cd0de407b47d63b5f150920b53157c2",
+            "username": "Afreen"
+        },
+        {
+            "member": "false",
+            "score": 3.76,
+            "userID": "f05bece564916c2a1fbb389ee46fb7d94a14e34bcca4ac5eb97fbe1826a2003a",
+            "username": "ABCD"
+        },
+        {
+            "member": "true",
+            "score": 3.71,
+            "userID": "729259499053e19c54aecc5a0ca677f49164366d3dfedc85d8b85422cb75071e",
+            "username": "Abhinandan"
+        },
+        {
+            "member": "false",
+            "score": 3.11,
+            "userID": "9207eeb79f2624eb3f7864de79d3a72bf0e116f82aebd384f478b14b1ea1f66e",
+            "username": "Antara "
+        },
+        {
+            "member": "true",
+            "score": 3,
+            "userID": "c7b41b6a818298525c457c3d6f033374f63f5a968d16046683b8cc74d5a02002",
+            "username": "IMXSwarup"
+        },
+        {
+            "member": "true",
+            "score": 3,
+            "userID": "6ad082c207fa7fa8703d3da09b79f42b5c05f06d31ca5785e873187e41f94656",
+            "username": "Moumoni bera"
+        },
+        {
+            "member": "true",
+            "score": 3,
+            "userID": "217730b8ed22345a342e6f8d3b6fc614c6fb282f05b29134d7d1ab2ee48eb317",
+            "username": "SWARUP SAW"
+        },
+        {
+            "member": "true",
+            "score": 3,
+            "userID": "a8904e3ac7f3f26bc9a9ab0c426c040c8e8f758ef6f554b752dd20f241c30a81",
+            "username": "Madhavi"
+        },
+        {
+            "member": "true",
+            "score": 3,
+            "userID": "687cacac2f59b2b5be9579eaba304efd73ecbb3be78104de80286ff6be4a1b83",
+            "username": "Online "
+        },
+        {
+            "member": "true",
+            "score": 3,
+            "userID": "284788215a03f6967d60f9f002fa5492436c07a556f311b79fad68b6e627bb04",
+            "username": "Subham Roy"
+        },
+        {
+            "member": "true",
+            "score": 3,
+            "userID": "b2cd49e9a5eae981bbcf2f7c4bc857883ce3e9e09f059ab01b0713580fe64263",
+            "username": "Swarup"
+        },
+        {
+            "member": "false",
+            "score": 2.99,
+            "userID": "811a59051219f9df6b300dda192c6bb56a2b04dc349af92fb1554914c48f30c1",
+            "username": "Mononokean"
+        },
+        {
+            "member": "true",
+            "score": 2.9699999999999998,
+            "userID": "7b4364ccd69285221bcd9338caa8164b9f36c34ce20233c8b663327a97465aa1",
+            "username": "Koyel Biswas"
+        },
+        {
+            "member": "true",
+            "score": 2.96,
+            "userID": "1ef9d671de8cc5fdcba0f0dbf9f515bf6b4f64ce1d5b59c2d5bf7ec6ff6f78af",
+            "username": "srijani"
+        },
+        {
+            "member": "true",
+            "score": 2.96,
+            "userID": "664c200d40cccecc7eb0ad9edc6b6557fa64eebc97b0440511812b9a697a2c50",
+            "username": "Tanmoy Chowdhury"
+        },
+        {
+            "member": "false",
+            "score": 2.96,
+            "userID": "6511183ab93ec8fe5ee39ee32e5938deecfcd0e4fa84784220a68cfb79384563",
+            "username": "Debojoty mallick"
+        },
+        {
+            "member": "true",
+            "score": 2.96,
+            "userID": "c45e531436fc19401ed08820e3329aa6b98502583b2d65c38a72a5f70a29f9e2",
+            "username": "Shoveet Singh "
+        },
+        {
+            "member": "true",
+            "score": 2.95,
+            "userID": "204d7a5f978a28a8e9b149fd512b64c85c158b9901d401f1eebc88b24624c0ee",
+            "username": "Bharati "
+        },
+        {
+            "member": "false",
+            "score": 2.95,
+            "userID": "544e96ad8e46d49240252f4638e67ce28c3fb4ff5e91ad5edd6375670f31f861",
+            "username": "Sukrit Chakraborty "
+        },
+        {
+            "member": "true",
+            "score": 2.94,
+            "userID": "102c964275d8de10aa636e43c85bf10bdac6a6231df288cefeffb5e189736c8c",
+            "username": "Arshad"
+        },
+        {
+            "member": "false",
+            "score": 2.9,
+            "userID": "69706e48c976319d2953f86175429cc31add9915cf1d7b81f9e9a3a7d0a92cd5",
+            "username": "Rohan"
+        },
+        {
+            "member": "true",
+            "score": 2.9,
+            "userID": "8535078968da838571e794b4fc4a32145c38f8ea064251490990fd2e469cd30b",
+            "username": "Diksha Kumari"
+        },
+        {
+            "member": "true",
+            "score": 2.82,
+            "userID": "a8df02e7d181d23b5b1b2cc0962df66cc5b96c3302e4cf4f0e2d6144dcfdb494",
+            "username": "Akash Sharma"
+        },
+        {
+            "member": "false",
+            "score": 2.82,
+            "userID": "cab3a061b47841745b4d6db2bd7d8e236139cc410509666d94ed64d6654d1af4",
+            "username": "Yash Prasad"
+        },
+        {
+            "member": "true",
+            "score": 2.7800000000000002,
+            "userID": "3516c55330ee41449b92ea68b9ac7107a05d2d961e672770583ccb1e301b2d60",
+            "username": "TITAS KARMAKAR"
+        },
+        {
+            "member": "true",
+            "score": 2.7800000000000002,
+            "userID": "1e35c46b9651738b76b7d7b2fc91b3c3a9298bb32355ff742e3dccf5fe7e1408",
+            "username": "Ansh kumar shaw"
+        },
+        {
+            "member": "true",
+            "score": 2.7800000000000002,
+            "userID": "a098c724c420a06afc331866e4d878f047f1ca2e9528523ad781b3ba1c63c03d",
+            "username": "test_hiki"
+        },
+        {
+            "member": "false",
+            "score": 2.77,
+            "userID": "d43f1d25a6b5136b0f455a803c37789bb1d28492b34e0e74cd57e5b7d10953f0",
+            "username": "Dhruv Dorbi"
+        },
+        {
+            "member": "false",
+            "score": 2.76,
+            "userID": "53a51d89725001b6ceca1dc86dc28d6e2be4260b7f4e9ca7ae2b6a84fba5d6e2",
+            "username": "Mustak "
+        },
+        {
+            "member": "true",
+            "score": 2.75,
+            "userID": "9ac57146d5216ed78fa2d1a5c4768f92b8345e117206c655aaa07825d94832cf",
+            "username": "TUHIN KANTI PANJA"
+        },
+        {
+            "member": "true",
+            "score": 2.73,
+            "userID": "6dfd0e2ee5dd0574e5092698a5e06c73a6b6d382cd9da32f147211dea169e337",
+            "username": "Pritam Chakraborty"
+        },
+        {
+            "member": "false",
+            "score": 2.73,
+            "userID": "30de99ddcc86b8c7939a32f67e2ff295da26bb010e747ec1171e721850776011",
+            "username": "Shubham "
+        },
+        {
+            "member": "true",
+            "score": 2.7199999999999998,
+            "userID": "cf86488af545f1a5ffa7979463444558a407137e56ff216b8b8fcbde56634b2f",
+            "username": "Virus"
+        },
+        {
+            "member": "false",
+            "score": 2.65,
+            "userID": "19446851405f8d7b3854637c489f905dca82fddf9b89c5e05525d372a9968a61",
+            "username": "Raj Sharma"
+        },
+        {
+            "member": "true",
+            "score": 2.63,
+            "userID": "f96985c7974f2eb2e6111433bd3b67a2169ecfee24218fc5cc4da54b61e7c269",
+            "username": "Soumyadeep Kundu"
+        },
+        {
+            "member": "true",
+            "score": 2.09,
+            "userID": "453449aec9c5185bb564d6243bfc2957fd39c50742b0ff60a8f276e3d52ffa74",
+            "username": "Atul"
+        },
+        {
+            "member": "true",
+            "score": 0,
+            "userID": "ef1bb9f4e0cb2c27cc9e27cea99566f708c5003b26be94586ea278e0aaffa7b6",
+            "username": "AKG"
+        },
+        {
+            "member": "true",
+            "score": 0,
+            "userID": "796d32bcb39d827bb80d0c8d936c218704fd5af8511ca76122d660d4ec45be3f",
+            "username": "Jeet"
+        },
+        {
+            "member": "true",
+            "score": 0,
+            "userID": "0a8c2890289669868d01ed3f21e6440fc80a30a984751be14f939d015f9125fc",
+            "username": "Anurag"
+        },
+        {
+            "member": "true",
+            "score": 0,
+            "userID": "bcb1319fe6bbd08bae827fd585847d25e3ae8407bef436be0c96246907da9f47",
+            "username": "Syamantak Pathak"
+        },
+        {
+            "member": "true",
+            "score": 0,
+            "userID": "b73621c128990b5d54da5a65662fe156bfe636011bff040a727dd21a7c1d143d",
+            "username": "Dee"
+        },
+        {
+            "member": "true",
+            "score": 0,
+            "userID": "87ae97b445db375dd5698a66aa9a9c24e1b6701b545c8395145ece7654136caf",
+            "username": "Subhro Mohanta "
+        },
+        {
+            "member": "false",
+            "score": 0,
+            "userID": "25b3875bead65e4d0380e26342313e8fd67edecd18c19005051153da4eed5f64",
+            "username": "shahank"
+        },
+        {
+            "member": "true",
+            "score": 0,
+            "userID": "307c3c536ef859eb8f91f39449dba71bbbd601c42caecce1ff1eea5999cadd0a",
+            "username": "Sourav upadhyay"
+        },
+        {
+            "member": "true",
+            "score": 0,
+            "userID": "05aa2d7e08b2d64c4e54a3deb0726664d4a6499ba6d6cc4148fdbf3c5dbfed45",
+            "username": "sayan naskar"
+        },
+        {
+            "member": "true",
+            "score": 0,
+            "userID": "dc4f085d4065d1467db6b7d855511d51bbf25c735e1e02ae467ccd2e8ae3ed8d",
+            "username": "Arijit"
+        },
+        {
+            "member": "true",
+            "score": 0,
+            "userID": "2c0b741a8cb066b5d98128dab7239b7bd7ff7603c2d6a4737d3af3ebf18511e7",
+            "username": "Md Touheed Nawaz"
+        },
+        {
+            "member": "false",
+            "score": 0,
+            "userID": "93aaa235dc61710e0b28dd8b004d4134480d1d296fdbccade968519b90ceb761",
+            "username": "SOUMADEEP CHAKRABORTY"
+        },
+        {
+            "member": "true",
+            "score": 0,
+            "userID": "ca7a5d9d3d67d787c6e5cf689ce998bfd701148617bb724846369f2fe93e935e",
+            "username": "SD"
+        },
+        {
+            "member": "true",
+            "score": 0,
+            "userID": "a7a9def23a7aae4ab33ff9b6470e135561f2481e9aa7f9b1dbfbfaa61056eafe",
+            "username": "Shristi "
+        },
+        {
+            "member": "true",
+            "score": 0,
+            "userID": "c44123bd8cc53fac427242fa6b5d681cb8b28ecf4ad408045293e63d4f3762d9",
+            "username": "Shib Sankar Das "
+        },
+        {
+            "member": "true",
+            "score": 0,
+            "userID": "24097b12bb2441e59bed431b1868d3c61c56ccd0d6dd0e3a5870f4a28eba5951",
+            "username": "Debanjan "
+        },
+        {
+            "member": "true",
+            "score": 0,
+            "userID": "5982c26cc5aa10644478e8d6400ab733eb22d319978fd98c1630d7cd16f25ef2",
+            "username": "Soumya"
+        },
+        {
+            "member": "true",
+            "score": 0,
+            "userID": "53dd869ce7ec3a20de1147cd2b96bfc34eeaa3687692827e972f6721094b30f6",
+            "username": "Subhajit Charan"
+        },
+        {
+            "member": "true",
+            "score": 0,
+            "userID": "ee03c52ccb8e0e391b7c634b45df2d219384b76ccdde04dc3c729a1d15faaef6",
+            "username": "SD"
+        },
+        {
+            "member": "true",
+            "score": 0,
+            "userID": "57d7ca551455b1115ee11132fea65185410f3449b7dabe247d89eba9daa0eb44",
+            "username": "Shreyansh mishra"
+        },
+        {
+            "member": "true",
+            "score": 0,
+            "userID": "9ffb0df2880dd88a16616e53eb8d1e3c50710df00f3f9ea506aa4350d0c1a304",
+            "username": "Soumyadipta Giri"
+        }
+    ]
+}
