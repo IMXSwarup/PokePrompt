@@ -133,7 +133,7 @@ function submitPrompt(prompt = "hi") {
             gptOutput.value = ""
             typeWriter(response.res)
 
-            if (response.status == "True" && level <= 3) {
+            if (response.status == "False" && level <= 3) {
                 // gptOutput.value = "Level was completed!";
                 // gptOutput.value += "\nLevel was completed!\n"
                 // typeWriter("Level was completed!");
@@ -143,7 +143,7 @@ function submitPrompt(prompt = "hi") {
                 level += 1;
                 levelpp();
 
-                if (level != 4) {
+                if (level != 4) {z
                     fetchSystemPrompt(`https://pokeprompt.bitgdsc.repl.co/default/lv_${level}`);
                 } else {
                     // alert("ALL LEVELS COMPLETED!!!")
@@ -162,71 +162,12 @@ function submitPrompt(prompt = "hi") {
 
     if (level == 1) {
         xhr.send(JSON.stringify(data1));
-        document.getElementById('dialog-you-win').showModal();
-        if (xhr.status === 200) {
-            var apiResponse = JSON.parse(xhr.responseText);
-            var user = apiResponse.res.find(function(item) {
-                return item.userID === userID;
-            });
-
-            if (user) {
-                callback(user.score);
-            } else {
-                callback(null); // User not found
-            }
-        } else {
-            console.error("Request failed with status:", xhr.status);
-            callback(null); // Request failed
-        }
-        winPokemon(response.card_url);
-        level += 1;
-        levelpp();
 
     } else if (level == 2) {
         xhr.send(JSON.stringify(data2));
-        document.getElementById('dialog-you-win').showModal();
-        if (xhr.status === 200) {
-            var apiResponse = JSON.parse(xhr.responseText);
-            var user = apiResponse.res.find(function(item) {
-                return item.userID === userID;
-            });
-
-            if (user) {
-                callback(user.score);
-            } else {
-                callback(null); // User not found
-            }
-        } else {
-            console.error("Request failed with statuss:", xhr.status);
-            callback(null); // Request failed
-        }
-
-        winPokemon(response.card_url);
-        level += 1;
-        levelpp();
 
     } else if (level == 3) {
         xhr.send(JSON.stringify(data3));
-        document.getElementById('dialog-you-win').showModal();
-        if (xhr.status === 200) {
-            var apiResponse = JSON.parse(xhr.responseText);
-            var user = apiResponse.res.find(function(item) {
-                return item.userID === userID;
-            });
-
-            if (user) {
-                callback(user.score);
-            } else {
-                callback(null); // User not found
-            }
-        } else {
-            console.error("Request failed with statusss:", xhr.status);
-            callback(null); // Request failed
-        }
-
-        winPokemon(response.card_url);
-        level += 1;
-        levelpp();
 
     } else {
         alert("DONE!")
