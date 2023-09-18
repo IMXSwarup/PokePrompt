@@ -178,6 +178,9 @@ function submitPrompt(prompt = "hi") {
             console.error("Request failed with status:", xhr.status);
             callback(null); // Request failed
         }
+        winPokemon(response.card_url);
+        level += 1;
+        levelpp();
 
     } else if (level == 2) {
         xhr.send(JSON.stringify(data2));
@@ -198,6 +201,10 @@ function submitPrompt(prompt = "hi") {
             callback(null); // Request failed
         }
 
+        winPokemon(response.card_url);
+        level += 1;
+        levelpp();
+
     } else if (level == 3) {
         xhr.send(JSON.stringify(data3));
         document.getElementById('dialog-you-win').showModal();
@@ -216,6 +223,10 @@ function submitPrompt(prompt = "hi") {
             console.error("Request failed with status:", xhr.status);
             callback(null); // Request failed
         }
+
+        winPokemon(response.card_url);
+        level += 1;
+        levelpp();
 
     } else {
         alert("DONE!")
