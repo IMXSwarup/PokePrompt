@@ -67,45 +67,112 @@ function fetchSystemPrompt(url) {
 
 
 function submitPrompt(prompt = "hi") {
-    const metadata = JSON.parse(localStorage.getItem("metadata"));
+
     const userID = JSON.parse(localStorage.getItem("responseData")).user_id;
-    
-    // Simulate a successful response
-    const response = {
-        status: "True",
-        card_url: "URL_OF_POKEMON_CARD", // Replace with an actual card URL
-        res: "Congratulations! You won a Pokémon!",
+    console.log(userID)
+    const metadata = JSON.parse(localStorage.getItem("metadata"));
+    const lvlString = `level_${level}`;
+    console.log(lvlString);
+
+    const data1 = {
+        "User_input": prompt,
+        "level": level,
+        "User_json": {
+            "username": metadata.User_json.username,
+            "member": metadata.User_json.member,
+            "total_score": 0.0,
+            "level": {
+                'level_1': {
+                    "score": 0.0,
+                    "start_time": "HH:MM:SS DD:MM:YYYY",
+                }
+            }
+        }
+    }
+    const data2 = {
+        "User_input": prompt,
+        "level": level,
+        "User_json": {
+            "username": metadata.User_json.username,
+            "member": metadata.User_json.member,
+            "total_score": 0.0,
+            "level": {
+                'level_2': {
+                    "score": 0.0,
+                    "start_time": "HH:MM:SS DD:MM:YYYY",
+                }
+            }
+        }
+    }
+    const data3 = {
+        "User_input": prompt,
+        "level": level,
+        "User_json": {
+            "username": metadata.User_json.username,
+            "member": metadata.User_json.member,
+            "total_score": 0.0,
+            "level": {
+                'level_3': {
+                    "score": 0.0,
+                    "start_time": "HH:MM:SS DD:MM:YYYY",
+                }
+            }
+        }
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", `https://pokeprompt.bitgdsc.repl.co/ai-ml-game/${userID}`, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onload = function() {
+        console.log(xhr.status);
+        if (xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            console.log(response);
+            // gptOutput.value = response.res;
+            gptOutput.value = ""
+            typeWriter(response.res)
+
+            if (response.status == "True" && level <= 3) {
+                // gptOutput.value = "Level was completed!";
+                // gptOutput.value += "\nLevel was completed!\n"
+                // typeWriter("Level was completed!");
+
+                // alert("Level was completed!");
+                winPokemon(response.card_url);
+                level += 1;
+                levelpp();
+
+                if (level != 4) {
+                    fetchSystemPrompt(`https://pokeprompt.bitgdsc.repl.co/default/lv_${level}`);
+                } else {
+                    // alert("ALL LEVELS COMPLETED!!!")
+                    document.getElementById('dialog-you-win').showModal();
+                }
+            }
+            // systemPrompt.textContent = response.sys_prompt;
+        } else {
+            console.error('Network response was not ok');
+        }
     };
 
-    // Update the score and level
-    metadata.level += 1;
-    metadata.User_json.level[`level_${metadata.level}`] = {
-        score: 15, // Set your desired score
-        start_time: "HH:MM:SS DD:MM:YYYY",
+    xhr.onerror = function() {
+        console.error('Error fetching data:', xhr.statusText);
     };
 
-    // Update the local storage
-    localStorage.setItem("metadata", JSON.stringify(metadata));
+    if (level == 1) {
+        xhr.send(JSON.stringify(data1));
 
-    // Show the response
-    gptOutput.value = "";
-    typeWriter(response.res);
+    } else if (level == 2) {
+        xhr.send(JSON.stringify(data2));
 
-    // If all levels completed, show the "You Win" dialog
-    if (metadata.level === 4) {
-        document.getElementById('dialog-you-win').showModal();
+    } else if (level == 3) {
+        xhr.send(JSON.stringify(data3));
+
+    } else {
+        alert("DONE!")
     }
-    
-    // If not all levels are completed, fetch the next system prompt
-    if (metadata.level <= 3) {
-        fetchSystemPrompt(`https://pokeprompt.bitgdsc.repl.co/default/lv_${metadata.level}`);
-    }
-    
-    // Update the leaderboard with the new score
-    fetchLeaderboard();
 }
-
-
 
 function fetchUserScoreByUserID(userID, callback) {
     var xhr = new XMLHttpRequest();
