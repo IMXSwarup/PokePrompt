@@ -162,6 +162,7 @@ function submitPrompt(prompt = "hi") {
 
     if (level == 1) {
         xhr.send(JSON.stringify(data1));
+        document.getElementById('dialog-you-win').showModal();
 
     } else if (level == 2) {
         xhr.send(JSON.stringify(data2));
