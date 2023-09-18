@@ -176,7 +176,7 @@ function submitPrompt(prompt = "hi") {
 
 function fetchUserScoreByUserID(userID, callback) {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://pokeprompt.bitgdsc.repl.co/ai-ml-game/leaderboard", true);
+    xhr.open("GET", "https://pokeprompt.bitgdsc.repl.co/ai-ml-game/leaderboar", true);
 
     xhr.onload = function() {
         if (xhr.status === 200) {
