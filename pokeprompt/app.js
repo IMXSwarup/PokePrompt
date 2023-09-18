@@ -12,7 +12,7 @@ const pokeCard = document.querySelector("#poke-card")
 const sharePokeCardBtn = document.querySelector("#share-pokecard-btn");
 const downloadPokeCard = document.querySelector("#download-pokecard");
 const username = document.querySelector("#username")
-const score = document.querySelector("#score"="10.0");
+const score = document.querySelector("#score");
 
 
 const speed = 50;
