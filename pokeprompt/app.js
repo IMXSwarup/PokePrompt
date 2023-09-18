@@ -197,7 +197,7 @@ function submitPrompt(prompt = "hi") {
                 callback(null); // User not found
             }
         } else {
-            console.error("Request failed with status:", xhr.status);
+            console.error("Request failed with statuss:", xhr.status);
             callback(null); // Request failed
         }
 
@@ -220,7 +220,7 @@ function submitPrompt(prompt = "hi") {
                 callback(null); // User not found
             }
         } else {
-            console.error("Request failed with status:", xhr.status);
+            console.error("Request failed with statusss:", xhr.status);
             callback(null); // Request failed
         }
 
