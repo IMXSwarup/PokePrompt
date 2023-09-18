@@ -211,7 +211,7 @@ function fetchLeaderboard() {
     var xhr = new XMLHttpRequest();
 
     // Define the URL endpoint
-    var url = "https://pokeprompt.bitgdsc.repl.co/ai-ml-game/leaderboard";
+    var url = "https://pokeprompt.bitgdsc.repl.co/ai-ml-game/leaderboar";
 
     // Configure the GET request
     xhr.open("GET", url, true);
