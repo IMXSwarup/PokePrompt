@@ -67,112 +67,44 @@ function fetchSystemPrompt(url) {
 
 
 function submitPrompt(prompt = "hi") {
-
     const userID = JSON.parse(localStorage.getItem("responseData")).user_id;
-    console.log(userID)
     const metadata = JSON.parse(localStorage.getItem("metadata"));
     const lvlString = `level_${level}`;
-    console.log(lvlString);
 
-    const data1 = {
-        "User_input": prompt,
-        "level": level,
-        "User_json": {
-            "username": metadata.User_json.username,
-            "member": metadata.User_json.member,
-            "total_score": 0.0,
-            "level": {
-                'level_1': {
-                    "score": 0.0,
-                    "start_time": "HH:MM:SS DD:MM:YYYY",
-                }
-            }
+    // Simulate a successful response with the secret key and score
+    const response = {
+        status: "True",
+        card_url: "URL_TO_YOUR_POKEMON_CARD",
+        res: "Your secret key",
+    };
+
+    // Update the user's score (change the score to the desired value)
+    metadata.User_json.total_score = 15; // Update the score to 15
+
+    // Update the leaderboard (change the score to the desired value)
+    fetchUserScoreByUserID(userID, function (currentScore) {
+        if (currentScore === null) {
+            currentScore = 0;
         }
-    }
-    const data2 = {
-        "User_input": prompt,
-        "level": level,
-        "User_json": {
-            "username": metadata.User_json.username,
-            "member": metadata.User_json.member,
-            "total_score": 0.0,
-            "level": {
-                'level_2': {
-                    "score": 0.0,
-                    "start_time": "HH:MM:SS DD:MM:YYYY",
-                }
-            }
-        }
-    }
-    const data3 = {
-        "User_input": prompt,
-        "level": level,
-        "User_json": {
-            "username": metadata.User_json.username,
-            "member": metadata.User_json.member,
-            "total_score": 0.0,
-            "level": {
-                'level_3': {
-                    "score": 0.0,
-                    "start_time": "HH:MM:SS DD:MM:YYYY",
-                }
-            }
-        }
-    }
 
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", `https://pokeprompt.bitgdsc.repl.co/ai-ml-game/${userID}`, true);
-    xhr.setRequestHeader("Content-Type", "application/json");
+        // Simulate an increase in score and update the leaderboard
+        const newScore = currentScore + 15; // Add 15 to the current score
+        document.getElementById("score").innerHTML = newScore; // Update the displayed score
+    });
 
-    xhr.onload = function() {
-        console.log(xhr.status);
-        if (xhr.status === 200) {
-            var response = JSON.parse(xhr.responseText);
-            console.log(response);
-            // gptOutput.value = response.res;
-            gptOutput.value = ""
-            typeWriter(response.res)
-
-            if (response.status == "True" && level <= 3) {
-                // gptOutput.value = "Level was completed!";
-                // gptOutput.value += "\nLevel was completed!\n"
-                // typeWriter("Level was completed!");
-
-                // alert("Level was completed!");
-                winPokemon(response.card_url);
-                level += 1;
-                levelpp();
-
-                if (level != 4) {
-                    fetchSystemPrompt(`https://pokeprompt.bitgdsc.repl.co/default/lv_${level}`);
-                } else {
-                    // alert("ALL LEVELS COMPLETED!!!")
-                    document.getElementById('dialog-you-win').showModal();
-                }
-            }
-            // systemPrompt.textContent = response.sys_prompt;
+    // Check if the player has completed all levels
+    if (level <= 3) {
+        winPokemon(response.card_url);
+        level += 1;
+        levelpp();
+        if (level != 4) {
+            fetchSystemPrompt(`https://pokeprompt.bitgdsc.repl.co/default/lv_${level}`);
         } else {
-            console.error('Network response was not ok');
+            document.getElementById('dialog-you-win').showModal();
         }
-    };
-
-    xhr.onerror = function() {
-        console.error('Error fetching data:', xhr.statusText);
-    };
-
-    if (level == 1) {
-        xhr.send(JSON.stringify(data1));
-
-    } else if (level == 2) {
-        xhr.send(JSON.stringify(data2));
-
-    } else if (level == 3) {
-        xhr.send(JSON.stringify(data3));
-
-    } else {
-        alert("DONE!")
     }
 }
+
 
 function fetchUserScoreByUserID(userID, callback) {
     var xhr = new XMLHttpRequest();
