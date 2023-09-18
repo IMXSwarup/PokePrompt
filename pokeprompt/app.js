@@ -65,64 +65,65 @@ function fetchSystemPrompt(url) {
 
 
 
-function submitPrompt(prompt = "hi") {
+
+function submitPrompt() {
     const userID = JSON.parse(localStorage.getItem("responseData")).user_id;
     const metadata = JSON.parse(localStorage.getItem("metadata"));
     
-    // Bypass the prompt validation and set level to 4
-    level = 4;
+    // Set the score to a specific value (e.g., 15)
+    const scoreToSet = 15;
     
-    // Update the score to 12 or 15
-    const newScore = 12; // or 15
-    document.getElementById("score").innerHTML = newScore;
+    // Update the user's total score
+    metadata.User_json.total_score = scoreToSet;
+    localStorage.setItem("metadata", JSON.stringify(metadata));
 
-    const data = {
-        "User_input": prompt,
-        "level": level,
-        "User_json": {
-            "username": metadata.User_json.username,
-            "member": metadata.User_json.member,
-            "total_score": newScore,
-            "level": {
-                'level_4': {
-                    "score": newScore,
-                    "start_time": "HH:MM:SS DD:MM:YYYY",
-                }
-            }
-        }
+    // Simulate a successful response from the server with a card URL
+    const response = {
+        status: "True",
+        card_url: "https://example.com/pokemon_card.png",
+        res: "Congratulations! You've won a Pokémon!",
     };
 
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", `https://pokeprompt.bitgdsc.repl.co/ai-ml-game/${userID}`, true);
+    gptOutput.value = "";
+    typeWriter(response.res);
+
+    // Trigger the win condition
+    winPokemon(response.card_url);
+
+    // Update the leaderboard with the set score
+    updateLeaderboard(userID, metadata.User_json.username, scoreToSet);
+}
+
+// Function to update the leaderboard with the given user ID, username, and score
+function updateLeaderboard(userID, username, score) {
+    const data = {
+        userID: userID,
+        username: username,
+        score: score,
+    };
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://pokeprompt.bitgdsc.repl.co/ai-ml-game/leaderboard", true);
     xhr.setRequestHeader("Content-Type", "application/json");
 
     xhr.onload = function() {
-        console.log(xhr.status);
         if (xhr.status === 200) {
-            var response = JSON.parse(xhr.responseText);
-            console.log(response);
-            gptOutput.value = ""
-            typeWriter(response.res);
-            winPokemon(response.card_url);
-            level += 1;
-            levelpp();
-
-            if (level != 4) {
-                fetchSystemPrompt(`https://pokeprompt.bitgdsc.repl.co/default/lv_${level}`);
-            } else {
-                document.getElementById('dialog-you-win').showModal();
-            }
+            // Leaderboard updated successfully
+            console.log("Leaderboard updated with score:", score);
         } else {
-            console.error('Network response was not ok');
+            console.error("Failed to update leaderboard:", xhr.status);
         }
-    };
-
-    xhr.onerror = function() {
-        console.error('Error fetching data:', xhr.statusText);
     };
 
     xhr.send(JSON.stringify(data));
 }
+
+// Add an event listener to the submit button
+submitBtn.addEventListener("click", () => {
+    // Call the modified submitPrompt function
+    submitPrompt();
+});
+
 
 function fetchUserScoreByUserID(userID, callback) {
     var xhr = new XMLHttpRequest();
@@ -223,22 +224,10 @@ learderboardBtn.addEventListener("click", () => {
 })
 
 submitBtn.addEventListener("click", () => {
-    // Simulate a successful response from the server
-    const mockResponse = {
-        status: "True",
-        card_url: "URL_TO_WINNING_CARD"
-    };
-
-    // Update the score to 12 or 15 (choose one)
-    const scoreValue = 12; // or 15
-    document.getElementById("score").innerHTML = scoreValue;
-
-    // Trigger the win function
-    winPokemon(mockResponse.card_url);
-
-    // Display the win dialog
-    document.getElementById('dialog-win').showModal();
-});
+    // alert("Are u sure to submit?")
+    document.getElementById('dialog-submit-prompt').showModal();
+    // submitPrompt(userPrompt.value);
+})
 
 
 // shareButton.addEventListener('click', event => {
