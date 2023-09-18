@@ -171,7 +171,7 @@ function submitPrompt(prompt = "hi") {
 
     } else {
         //alert("DONE!")
-        xhr.send(JSON.stringify(data1));
+        
     }
 }
 
